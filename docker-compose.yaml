@@ -2,7 +2,7 @@ version: "3.9"
 services:
   hp_torpus:
     depends_on:
-      - wp_audio
+      - wiki
     ports:
     - 80:80
     - 443:443 # you can comment
