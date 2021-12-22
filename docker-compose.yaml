@@ -4,7 +4,7 @@ services:
     depends_on:
       - wiki
     ports:
-    - 80:80
+    - 80:81
     - 443:443 # you can comment
     - 5037:5037
     image: torplusdev/production:ipfs_haproxy-latest 
@@ -15,6 +15,7 @@ services:
       - ./ssl:/etc/ssl/torplus/
     environment:
       - http_address=wiki:80
+    #entrypoint: ["bash","-c", "while true; do echo step; sleep 2; done"]
   wiki:
     build:
       context: .
